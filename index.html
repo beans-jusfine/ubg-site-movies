@@ -1,76 +1,12 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0f0f0f">
-<meta name="description" content="NERO Movies — discover what to watch next.">
-<title>NERO Movies</title>
-<link rel="icon" href="https://www.google.com/s2/favicons?domain=cinevo.us&sz=64">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header class="topbar">
-  <a class="brand" href="#" aria-label="NERO Movies home"><span>NERO</span><i>MOVIES</i></a>
-  <nav class="main-nav" aria-label="Main navigation">
-    <button class="nav active" data-page="home">Home</button>
-    <button class="nav" data-page="movies">Movies</button>
-    <button class="nav" data-page="shows">TV Shows</button>
-    <button class="nav" data-page="watchlist">Watchlist <span id="watch-count" class="count">0</span></button>
-  </nav>
-  <label class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input id="search" type="search" placeholder="Search NERO Movies" autocomplete="off"></label>
-  <button id="profile" class="icon-btn" aria-label="Profile"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></button>
-</header>
-<main>
-  <section id="home-page" class="page active">
-    <section class="hero">
-      <div class="hero-content">
-        <span class="eyebrow">YOUR NEXT MOVIE NIGHT STARTS HERE</span>
-        <h1>Find something<br><em>worth watching.</em></h1>
-        <p>Explore movies and series, keep your watchlist close, and pick up where you left off.</p>
-        <div class="hero-actions"><a class="primary-btn" href="https://cinevo.us/" target="_blank" rel="noopener noreferrer">Explore on Cinevo <span>↗</span></a><button class="secondary-btn" data-go="movies">Browse NERO</button></div>
-      </div>
-      <div class="hero-mark" aria-hidden="true"><span>N</span><b>NERO<br>MOVIES</b></div>
-      <div class="hero-shade"></div>
-    </section>
-    <section class="section" id="continue-section">
-      <div class="section-head"><div><h2>Continue Watching</h2><p>Jump back into something you started</p></div><button class="text-btn" data-go="history">View history <span>→</span></button></div>
-      <div id="continue-grid" class="empty-panel"><div class="empty-icon">◷</div><h3>Nothing here yet</h3><p>Titles you open through NERO Movies can be saved here to make them easier to find again.</p></div>
-    </section>
-    <section class="section">
-      <div class="section-head"><div><h2>Discover</h2><p>Start exploring the catalog</p></div></div>
-      <div class="discover-grid">
-        <button class="discover-card" data-open-cinevo><span class="discover-icon">✦</span><b>Trending now</b><small>Explore popular picks on Cinevo</small><span class="arrow">↗</span></button>
-        <button class="discover-card" data-open-cinevo><span class="discover-icon">▣</span><b>Movies</b><small>Find your next movie</small><span class="arrow">↗</span></button>
-        <button class="discover-card" data-open-cinevo><span class="discover-icon">▤</span><b>TV Shows</b><small>Explore series and episodes</small><span class="arrow">↗</span></button>
-      </div>
-    </section>
-    <section class="section">
-      <div class="section-head"><div><h2>Your Watchlist</h2><p>Saved for another time</p></div><button class="text-btn" data-page="watchlist">See all <span>→</span></button></div>
-      <div id="home-watchlist" class="empty-panel compact"><p>Your watchlist is waiting. Add a title from its NERO details card when catalog integration is available.</p></div>
-    </section>
-  </section>
-  <section id="movies-page" class="page">
-    <div class="page-heading"><span class="eyebrow">THE COLLECTION</span><h1>Movies</h1><p>Find your next movie night pick.</p></div>
-    <div class="filter-row"><button class="filter active">All movies</button><button class="filter" data-open-cinevo>Trending ↗</button><button class="filter" data-open-cinevo>Popular ↗</button><button class="filter" data-open-cinevo>Recently added ↗</button></div>
-    <div class="empty-panel catalog-empty"><div class="empty-icon">⌕</div><h3>Connect a movie catalog</h3><p>NERO's catalog panel is ready. Cinevo currently has no verified public API or permission for catalog reuse, so NERO won't copy its listings without approval.</p><a class="primary-btn" href="https://cinevo.us/" target="_blank" rel="noopener noreferrer">Browse Cinevo <span>↗</span></a></div>
-  </section>
-  <section id="shows-page" class="page">
-    <div class="page-heading"><span class="eyebrow">SERIES & EPISODES</span><h1>TV Shows</h1><p>Keep track of the series you're watching.</p></div>
-    <div class="empty-panel catalog-empty"><div class="empty-icon">▤</div><h3>TV catalog coming next</h3><p>Once an approved catalog feed is available, series, seasons and episodes will appear here.</p><a class="primary-btn" href="https://cinevo.us/" target="_blank" rel="noopener noreferrer">Explore Cinevo <span>↗</span></a></div>
-  </section>
-  <section id="watchlist-page" class="page">
-    <div class="page-heading"><span class="eyebrow">SAVED FOR LATER</span><h1>Watchlist</h1><p>Your saved titles, on this device.</p></div>
-    <div id="watchlist-grid" class="empty-panel"><div class="empty-icon">♡</div><h3>Your list is empty</h3><p>When catalog integration is connected, you'll be able to save movies and shows here.</p></div>
-  </section>
-  <section id="history-page" class="page">
-    <div class="page-heading"><span class="eyebrow">PICK UP WHERE YOU LEFT OFF</span><h1>Continue Watching</h1><p>Recently opened titles.</p></div>
-    <div id="history-grid" class="empty-panel"><div class="empty-icon">◷</div><h3>No recent titles</h3><p>Open a title through NERO Movies to start building your history.</p></div>
-  </section>
-</main>
-<footer><span class="brand small"><span>NERO</span><i>MOVIES</i></span><span>Made for NERO</span><a href="https://cinevo.us/" target="_blank" rel="noopener noreferrer">Cinevo ↗</a></footer>
-<dialog id="add-dialog"><form method="dialog" id="add-form"><div class="dialog-head"><div><span class="eyebrow">SAVE A TITLE</span><h2>Add to NERO</h2></div><button class="icon-btn" value="cancel" aria-label="Close">×</button></div><label>Title<input id="title-input" required maxlength="100" placeholder="Movie or show name"></label><label>Cinevo page link<input id="url-input" type="url" required placeholder="https://cinevo.us/..."></label><div class="dialog-actions"><button class="secondary-btn" value="cancel">Cancel</button><button class="primary-btn" id="save-title" value="default">Save title</button></div></form></dialog>
-<div id="toast" role="status" aria-live="polite"></div>
-<script src="app.js"></script>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0f0f0f"><meta name="description" content="NERO Movies — discover your next favorite movie or show."><title>NERO Movies</title><link rel="icon" href="https://www.google.com/s2/favicons?domain=themoviedb.org&sz=64"><link rel="stylesheet" href="styles.css"></head>
+<body><header class="topbar"><a class="brand" href="#"><span>NERO</span><i>MOVIES</i></a><nav class="main-nav"><button class="nav active" data-page="home">Home</button><button class="nav" data-page="movies">Movies</button><button class="nav" data-page="shows">TV Shows</button><button class="nav" data-page="watchlist">Watchlist <span id="watch-count" class="count">0</span></button></nav><label class="search-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input id="search" type="search" placeholder="Search movies and shows" autocomplete="off"></label><button id="settings-open" class="icon-btn" aria-label="Settings">⚙</button></header>
+<main><section id="home-page" class="page active"><section class="hero" id="hero"><div class="hero-content"><span class="eyebrow">YOUR NEXT MOVIE NIGHT STARTS HERE</span><h1>Find something<br><em>worth watching.</em></h1><p>Explore movies and series, discover new favorites, and keep your watchlist close.</p><div class="hero-actions"><button class="primary-btn" id="hero-discover">Explore trending →</button><button class="secondary-btn" data-page="movies">Browse movies</button></div></div><div class="hero-mark"><span>N</span><b>NERO<br>MOVIES</b></div></section><div id="home-rows"><div class="skeleton-row"></div></div><section class="section"><div class="section-head"><div><h2>Continue Watching</h2><p>Your recently opened titles</p></div><button class="text-btn" data-page="history">View all →</button></div><div id="continue-grid" class="empty-panel"><h3>Nothing here yet</h3><p>Open a title to start building your viewing history.</p></div></section></section>
+<section id="movies-page" class="page"><div class="page-heading"><span class="eyebrow">THE COLLECTION</span><h1>Movies</h1><p>Explore popular, trending, and top-rated movies.</p></div><div id="movie-rows"><div class="skeleton-row"></div></div></section>
+<section id="shows-page" class="page"><div class="page-heading"><span class="eyebrow">SERIES & EPISODES</span><h1>TV Shows</h1><p>Discover your next series.</p></div><div id="show-rows"><div class="skeleton-row"></div></div></section>
+<section id="watchlist-page" class="page"><div class="page-heading"><span class="eyebrow">SAVED FOR LATER</span><h1>Watchlist</h1><p>Your saved movies and shows, on this device.</p></div><div id="watchlist-grid" class="poster-grid"></div></section>
+<section id="history-page" class="page"><div class="page-heading"><span class="eyebrow">PICK UP WHERE YOU LEFT OFF</span><h1>Continue Watching</h1><p>Your recently opened titles.</p></div><div id="history-grid" class="poster-grid"></div></section>
+<section id="search-page" class="page"><div class="page-heading"><span class="eyebrow">FIND YOUR NEXT FAVORITE</span><h1>Search</h1><p id="search-caption">Search movies and TV shows.</p></div><div id="search-grid" class="poster-grid"></div></section></main>
+<footer><span class="brand small"><span>NERO</span><i>MOVIES</i></span><span>Movie data provided by TMDB</span><a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">TMDB ↗</a></footer>
+<dialog id="settings-dialog"><form method="dialog" id="settings-form"><div class="dialog-head"><div><span class="eyebrow">PREFERENCES</span><h2>NERO Settings</h2></div><button class="icon-btn" value="cancel">×</button></div><label>TMDB API key<input id="tmdb-key" type="password" autocomplete="off" placeholder="Enter your TMDB API key"></label><p class="settings-note">Your key is stored only in this browser. It is not committed to GitHub or sent to NERO's servers. Get an API key from your TMDB account.</p><div class="dialog-actions"><button class="secondary-btn" type="button" id="clear-key">Clear key</button><button class="primary-btn" id="save-key" value="default">Save settings</button></div></form></dialog>
+<dialog id="detail-dialog" class="detail-dialog"><div id="detail-content"></div></dialog><div id="toast" role="status" aria-live="polite"></div><script src="app.js"></script></body></html>
