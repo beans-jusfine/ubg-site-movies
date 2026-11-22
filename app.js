@@ -30,3 +30,13 @@ $('#search').addEventListener('input',e=>{const q=e.target.value.trim();if(q)sea
 $('#detail-dialog').addEventListener('click',e=>{if(e.target===$('#detail-dialog'))$('#detail-dialog').close()});
 try{const channel=new BroadcastChannel('nero-stellar-direct');channel.onmessage=event=>{if(event.data?.type!=='CLOSE')return;const dialog=$('#player-dialog');$('#player-frame').src='about:blank';if(dialog.open)dialog.close()}}catch(e){}
 function init(){renderSaved();loadHome()}init();
+
+/* Receive the selected NERO shell theme from the parent browser app. */
+window.addEventListener('message',event=>{
+  if(event.origin!=='https://ubg-site-dev.pages.dev'&&event.origin!=='https://beans.work.gd')return;
+  if(event.data?.type!=='NERO_THEME_SYNC')return;
+  const theme=event.data.theme==='aero-glass'?'aero-glass':'default';
+  const color=['blue','silver','emerald','violet','rose'].includes(event.data.color)?event.data.color:'blue';
+  document.documentElement.dataset.neroTheme=theme;
+  document.documentElement.dataset.neroAeroColor=color;
+});

@@ -90,3 +90,70 @@ html,body{width:100%;min-width:0;overflow-x:hidden}
   .detail-backdrop{padding-right:13px;padding-left:13px}
   .detail-overview{font-size:11px}
 }
+
+
+/* NERO Aero theme bridge — follows the theme selected in the NERO browser shell. */
+html[data-nero-theme="aero-glass"]{
+  --bg:#17283d;--panel:#263d58;--panel2:#304a67;--line:rgba(220,239,255,.28);
+  --muted:#b3c4d6;--text:#f4f8fc;--white:#fff;color-scheme:dark;
+}
+html[data-nero-theme="aero-glass"] body{
+  background:radial-gradient(ellipse at 12% 5%,rgba(214,238,255,.18),transparent 36%),
+  radial-gradient(ellipse at 88% 85%,rgba(92,157,211,.18),transparent 42%),#17283d;
+}
+html[data-nero-theme="aero-glass"] .topbar,
+html[data-nero-theme="aero-glass"] footer{
+  background:linear-gradient(180deg,rgba(220,238,255,.19),rgba(65,100,137,.25));
+  border-color:var(--line);backdrop-filter:blur(20px) saturate(1.35);
+  box-shadow:inset 0 1px rgba(255,255,255,.18),0 5px 18px rgba(5,17,31,.18);
+}
+html[data-nero-theme="aero-glass"] .hero,
+html[data-nero-theme="aero-glass"] .discover-card,
+html[data-nero-theme="aero-glass"] .empty-panel,
+html[data-nero-theme="aero-glass"] .poster-card,
+html[data-nero-theme="aero-glass"] .detail-lower,
+html[data-nero-theme="aero-glass"] .player-shell{
+  background:linear-gradient(145deg,rgba(223,240,255,.14),rgba(35,61,87,.48));
+  border-color:var(--line);box-shadow:inset 0 1px rgba(255,255,255,.12),0 10px 28px rgba(5,18,32,.18);
+  backdrop-filter:blur(14px) saturate(1.2);
+}
+html[data-nero-theme="aero-glass"] .hero{background-image:radial-gradient(ellipse at 80% 48%,rgba(164,207,240,.3),transparent 58%),linear-gradient(145deg,rgba(223,240,255,.14),rgba(35,61,87,.48))}
+html[data-nero-theme="aero-glass"] .nav.active:after{background:var(--acc);box-shadow:0 0 12px var(--acc)}
+html[data-nero-theme="aero-glass"] .nav:hover,
+html[data-nero-theme="aero-glass"] .nav.active{color:var(--text)}
+html[data-nero-theme="aero-glass"] .search-wrap,
+html[data-nero-theme="aero-glass"] .icon-btn,
+html[data-nero-theme="aero-glass"] .secondary-btn,
+html[data-nero-theme="aero-glass"] .server-change-btn,
+html[data-nero-theme="aero-glass"] .player-source-menu,
+html[data-nero-theme="aero-glass"] .player-toolbar select{
+  color:var(--text);background:rgba(13,29,47,.58);border-color:var(--line);
+  box-shadow:inset 0 1px rgba(255,255,255,.1);
+}
+html[data-nero-theme="aero-glass"] .primary-btn{
+  color:#10263b;background:linear-gradient(180deg,#e5f5ff,#a9d8f8 48%,#78b5e5);
+  border:1px solid rgba(242,250,255,.78);box-shadow:inset 0 1px rgba(255,255,255,.9),0 2px 7px rgba(4,20,36,.24);
+}
+html[data-nero-theme="aero-glass"] .detail-dialog,
+html[data-nero-theme="aero-glass"] .player-dialog{
+  color:var(--text);background:rgba(30,51,73,.97);border-color:var(--line);
+}
+html[data-nero-theme="aero-glass"] .detail-backdrop{
+  background-color:#203b57;
+}
+html[data-nero-theme="aero-glass"] .detail-overview,
+html[data-nero-theme="aero-glass"] .detail-facts,
+html[data-nero-theme="aero-glass"] .detail-genres{color:#d2e1ef}
+html[data-nero-theme="aero-glass"] .cast-name,
+html[data-nero-theme="aero-glass"] .provider-pill{color:var(--text);border-color:var(--line);background:rgba(220,239,255,.08)}
+html[data-nero-theme="aero-glass"] .poster-rating{background:rgba(20,43,65,.88);color:#fff}
+html[data-nero-theme="aero-glass"] .quick-save{background:rgba(20,43,65,.88);border-color:var(--line)}
+html[data-nero-theme="aero-glass"] .detail-close{background:rgba(20,43,65,.85);border-color:var(--line);color:#fff}
+html[data-nero-theme="aero-glass"][data-nero-aero-color="silver"]{--bg:#303944;--panel:#46515e;--panel2:#566372;--acc:#d5e0eb}
+html[data-nero-theme="aero-glass"][data-nero-aero-color="emerald"]{--bg:#18352f;--panel:#285247;--panel2:#356757;--acc:#8fe0bd}
+html[data-nero-theme="aero-glass"][data-nero-aero-color="violet"]{--bg:#29243e;--panel:#3d3659;--panel2:#4c426d;--acc:#c5b4f5}
+html[data-nero-theme="aero-glass"][data-nero-aero-color="rose"]{--bg:#3b2835;--panel:#56394b;--panel2:#68465a;--acc:#f0aeca}
+html[data-nero-theme="aero-glass"][data-nero-aero-color="silver"] body{background:radial-gradient(ellipse at 12% 5%,rgba(222,232,242,.16),transparent 36%),#303944}
+html[data-nero-theme="aero-glass"][data-nero-aero-color="emerald"] body{background:radial-gradient(ellipse at 12% 5%,rgba(128,222,184,.18),transparent 36%),#18352f}
+html[data-nero-theme="aero-glass"][data-nero-aero-color="violet"] body{background:radial-gradient(ellipse at 12% 5%,rgba(194,174,244,.19),transparent 36%),#29243e}
+html[data-nero-theme="aero-glass"][data-nero-aero-color="rose"] body{background:radial-gradient(ellipse at 12% 5%,rgba(242,173,204,.18),transparent 36%),#3b2835}
