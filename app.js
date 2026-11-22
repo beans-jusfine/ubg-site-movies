@@ -13,7 +13,7 @@ function year(x){const d=x.release_date||x.first_air_date||'';return d?d.slice(0
 function type(x){return x.media_type||(x.first_air_date?'tv':'movie')}
 function go(p){$$('.page').forEach(x=>x.classList.toggle('active',x.id===p+'-page'));$$('.nav').forEach(x=>x.classList.toggle('active',x.dataset.page===p));window.scrollTo({top:0,behavior:'smooth'})}
 $$('[data-page]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
-$('#hero-discover').onclick=()=>go('movies');
+const heroDiscover=$('#hero-discover');if(heroDiscover)heroDiscover.onclick=()=>go('movies');
 async function api(path){const u=new URL('https://api.themoviedb.org/3'+path);u.searchParams.set('api_key',apiKey);u.searchParams.set('language','en-US');const r=await fetch(u);if(!r.ok)throw Error(r.status===401?'TMDB rejected that API key. Check it in Settings.':'TMDB request failed ('+r.status+').');return r.json()}
 function empty(el,head,desc){el.className='empty-panel';el.innerHTML='<h3>'+esc(head)+'</h3><p>'+esc(desc)+'</p>'}
 function card(x){const t=type(x),id=x.id;return '<article class="poster-card"><button class="poster-open" data-detail="'+t+':'+id+'" aria-label="Details for '+esc(name(x))+'">'+(x.poster_path?'<img loading="lazy" src="'+img(x.poster_path)+'" alt="">':'<span class="poster-fallback">N</span>')+'<span class="poster-rating">★ '+(x.vote_average?Number(x.vote_average).toFixed(1):'—')+'</span></button><div class="poster-meta"><b>'+esc(name(x))+'</b><small>'+esc(year(x))+' · '+(t==='tv'?'TV':'Movie')+'</small></div><button class="quick-save" data-save="'+t+':'+id+'" aria-label="Add to Watchlist">＋</button></article>'}
