@@ -157,3 +157,7 @@ html[data-nero-theme="aero-glass"][data-nero-aero-color="silver"] body{backgroun
 html[data-nero-theme="aero-glass"][data-nero-aero-color="emerald"] body{background:radial-gradient(ellipse at 12% 5%,rgba(128,222,184,.18),transparent 36%),#18352f}
 html[data-nero-theme="aero-glass"][data-nero-aero-color="violet"] body{background:radial-gradient(ellipse at 12% 5%,rgba(194,174,244,.19),transparent 36%),#29243e}
 html[data-nero-theme="aero-glass"][data-nero-aero-color="rose"] body{background:radial-gradient(ellipse at 12% 5%,rgba(242,173,204,.18),transparent 36%),#3b2835}
+
+/* Continue Watching history controls */
+.section-actions{display:flex;align-items:center;gap:16px;flex:none}.clear-history-btn{color:#888}.clear-history-btn:hover{color:#f08080}
+@media(max-width:420px){.section-actions{gap:10px}.section-actions .text-btn{font-size:10px}}
