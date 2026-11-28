@@ -53,8 +53,11 @@ function init(){renderSaved();loadHome()}init();
 window.addEventListener('message',event=>{
   if(event.origin!=='https://ubg-site-dev.pages.dev'&&event.origin!=='https://beans.work.gd')return;
   if(event.data?.type!=='NERO_THEME_SYNC')return;
-  const theme=event.data.theme==='aero-glass'?'aero-glass':'default';
+  const allowedThemes=['default','mint','nord','amoled','aero-glass'];
+  const theme=allowedThemes.includes(event.data.theme)?event.data.theme:'default';
   const color=['blue','silver','emerald','violet','rose'].includes(event.data.color)?event.data.color:'blue';
-  document.documentElement.dataset.neroTheme=theme;
-  document.documentElement.dataset.neroAeroColor=color;
+  const root=document.documentElement;
+  if(theme==='aero-glass')root.dataset.neroTheme='aero-glass';else root.removeAttribute('data-nero-theme');
+  if(['mint','nord','amoled'].includes(theme))root.dataset.neroPalette=theme;else root.removeAttribute('data-nero-palette');
+  root.dataset.neroAeroColor=color;
 });
