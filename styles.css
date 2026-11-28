@@ -337,3 +337,7 @@ html[data-nero-theme="aero-glass"] .detail-actions .primary-btn {
 .poster-open{position:relative}
 .resume-progress{position:absolute;left:0;right:0;bottom:0;height:4px;background:#ffffff55;z-index:2}
 .resume-progress i{display:block;height:100%;background:var(--acc,#fff);min-width:2px}
+
+
+/* Playback resume choice prompt */
+.resume-dialog{width:min(440px,calc(100vw - 28px));padding:0;border:1px solid #383838;border-radius:14px;background:var(--panel);color:var(--text);box-shadow:0 24px 80px #000b}.resume-dialog::backdrop{background:#000b;backdrop-filter:blur(4px)}.resume-prompt{padding:26px}.resume-prompt h2{font-size:23px;line-height:1.15;margin:10px 0}.resume-prompt p{color:var(--muted);font-size:13px;line-height:1.6}.resume-prompt-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.resume-prompt-actions .text-btn{margin-left:auto}@media(max-width:480px){.resume-prompt{padding:21px}.resume-prompt-actions{display:grid;grid-template-columns:1fr}.resume-prompt-actions .text-btn{margin:0}}
