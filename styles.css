@@ -225,3 +225,46 @@ html[data-nero-palette="amoled"] :is(.search-wrap,.icon-btn,.secondary-btn,.serv
 }
 html[data-nero-palette="amoled"] .nav.active:after{background:var(--acc)}
 html[data-nero-palette="amoled"] .primary-btn{background:var(--acc);color:#171020}
+
+
+/* The full-screen playback surface follows the active NERO theme. */
+html[data-nero-palette="mint"] .player-dialog,
+html[data-nero-palette="mint"] .player-shell{
+  color:var(--text);background:linear-gradient(145deg,#10251b,#0b1711);
+  border-color:var(--line);
+}
+html[data-nero-palette="nord"] .player-dialog,
+html[data-nero-palette="nord"] .player-shell{
+  color:var(--text);background:linear-gradient(145deg,#263d55,#17283a);
+  border-color:var(--line);
+}
+html[data-nero-palette="amoled"] .player-dialog,
+html[data-nero-palette="amoled"] .player-shell{
+  color:var(--text);background:#050505;border-color:#191919;
+}
+html[data-nero-theme="aero-glass"] .player-shell{
+  background:linear-gradient(145deg,rgba(223,240,255,.16),rgba(35,61,87,.62));
+  border:1px solid var(--line);
+}
+html[data-nero-palette="mint"] .player-frame-wrap,
+html[data-nero-palette="mint"] .player-frame-wrap iframe{
+  background:#050d09;border-color:var(--line);
+}
+html[data-nero-palette="nord"] .player-frame-wrap,
+html[data-nero-palette="nord"] .player-frame-wrap iframe{
+  background:#0b1520;border-color:var(--line);
+}
+html[data-nero-palette="amoled"] .player-frame-wrap,
+html[data-nero-palette="amoled"] .player-frame-wrap iframe{
+  background:#000;border-color:#191919;
+}
+html[data-nero-theme="aero-glass"] .player-frame-wrap,
+html[data-nero-theme="aero-glass"] .player-frame-wrap iframe{
+  background:rgba(10,24,39,.72);border-color:var(--line);
+}
+html[data-nero-palette="mint"] .player-help,
+html[data-nero-palette="mint"] .player-top .eyebrow{color:var(--muted)}
+html[data-nero-palette="nord"] .player-help,
+html[data-nero-palette="nord"] .player-top .eyebrow{color:var(--muted)}
+html[data-nero-palette="amoled"] .player-help,
+html[data-nero-palette="amoled"] .player-top .eyebrow{color:var(--muted)}
