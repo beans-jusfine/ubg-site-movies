@@ -332,3 +332,8 @@ html[data-nero-palette="amoled"] .detail-actions .primary-btn {
 html[data-nero-theme="aero-glass"] .detail-actions .primary-btn {
   background:rgba(210,232,255,.9);color:#102334;
 }
+
+/* Continue Watching playback progress indicator. */
+.poster-open{position:relative}
+.resume-progress{position:absolute;left:0;right:0;bottom:0;height:4px;background:#ffffff55;z-index:2}
+.resume-progress i{display:block;height:100%;background:var(--acc,#fff);min-width:2px}
