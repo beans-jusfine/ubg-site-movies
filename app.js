@@ -61,11 +61,16 @@ function init(){renderSaved();loadHome()}init();
 window.addEventListener('message',event=>{
   if(event.origin!=='https://ubg-site-dev.pages.dev'&&event.origin!=='https://beans.work.gd')return;
   if(event.data?.type!=='NERO_THEME_SYNC')return;
-  const allowedThemes=['default','mint','nord','amoled','aero-glass'];
+  const allowedThemes=['default','mint','nord','amoled','aero-glass','custom'];
   const theme=allowedThemes.includes(event.data.theme)?event.data.theme:'default';
   const color=['blue','silver','emerald','violet','rose'].includes(event.data.color)?event.data.color:'blue';
   const root=document.documentElement;
   if(theme==='aero-glass')root.dataset.neroTheme='aero-glass';else root.removeAttribute('data-nero-theme');
   if(['mint','nord','amoled'].includes(theme))root.dataset.neroPalette=theme;else root.removeAttribute('data-nero-palette');
   root.dataset.neroAeroColor=color;
+  if(theme==='custom'&&event.data.custom&&typeof event.data.custom==='object'){
+    const keys={bg:'--bg',panel:'--panel',line:'--line',text:'--text',mute:'--mute',acc:'--acc'};
+    Object.entries(keys).forEach(([key,cssKey])=>{const value=event.data.custom[key];if(typeof value==='string'&&/^#[0-9a-f]{6}$/i.test(value))root.style.setProperty(cssKey,value)});
+    root.dataset.neroCustom='true';
+  }else{['--bg','--panel','--line','--text','--mute','--acc'].forEach(key=>root.style.removeProperty(key));root.removeAttribute('data-nero-custom')}
 });
